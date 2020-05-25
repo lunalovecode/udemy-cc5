@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Coding Challenge 5</title>
+	</head>
+	<body>
+		<script>
+			/*
+			function tipCalculator(bill) {
+				if (bill < 50) { //if the bill is less than 50, return 20% of the bill.
+					return Math.round(bill * 0.2);
+				} else if (bill >= 50 && bill <= 200) { //if the bill is between 50 and 200, return 15% of the bill.
+					return Math.round(bill * 0.15);
+				} else { //if the bill is more than 200, return 10% of the bill.
+					return Math.round(bill * 0.1);
+				}
+			}
+			var bill = [124, 48, 268];
+			var tip = [];
+			var totalBill= [];
+			for (var i = 0; i < bill.length; i++) {
+				tip[i] = tipCalculator(bill[i]);
+				totalBill[i] = bill[i] + tip[i];
+			}
+			//log to the console
+			console.log(tip);
+			console.log(totalBill);
+			*/
+			//John
+			var johnObj = {
+				bills: [124, 48, 268, 180, 42],
+				tip: [],
+				totalBill: [],
+				tipCalculator: function() {
+					for (var i = 0; i < this.bills.length; i++) {
+							if (this.bills[i] < 50) { //if the bill is less than 50, return 20% of the bill.
+								this.tip[i] = Math.round(this.bills[i] * 0.2);
+							} else if (this.bills[i] >= 50 && this.bills[i] <= 200) { //if the bill is between 50 and 200, return 15% of the bill.
+								this.tip[i] = Math.round(this.bills[i] * 0.15);
+							} else { //if the bill is more than 200, return 10% of the bill.
+								this.tip[i] = Math.round(this.bills[i] * 0.1);
+							}
+
+
+						this.totalBill[i] = this.bills[i] + this.tip[i];
+					}
+				}
+			}
+			johnObj.tipCalculator();
+			console.log(johnObj.tip);
+			console.log(johnObj.totalBill);
+			//Mark
+			var markObj = {
+				bills: [77, 375, 110, 45],
+				tip: [],
+				totalBill: [],
+				tipCalculator: function() {
+					for (var i = 0; i < this.bills.length; i++) {
+							if (this.bills[i] < 100) { //if the bill is less than 100, return 20% of the bill.
+								this.tip[i] = Math.round(this.bills[i] * 0.2);
+							} else if (this.bills[i] >= 100 && this.bills[i] <= 300) { //if the bill is between 100 and 300, return 10% of the bill.
+								this.tip[i] = Math.round(this.bills[i] * 0.1);
+							} else { //if the bill is more than 300, return 25% of the bill.
+								this.tip[i] = Math.round(this.bills[i] * 0.25);
+							}
+
+
+						this.totalBill[i] = this.bills[i] + this.tip[i];
+					}
+				}
+			}
+			markObj.tipCalculator();
+			console.log(markObj.tip);
+			console.log(markObj.totalBill);
+
+			function averageCalc(arr) {
+				var sum = 0;
+				for (var i = 0; i < arr.length; i++) {
+					sum = sum + arr[i];
+				}
+				return sum / arr.length;
+			}
+			var aveJohn = averageCalc(johnObj.tip)
+			var aveMark = averageCalc(markObj.tip)
+
+			if (aveJohn < aveMark) {
+				console.log("Mark's family paid the highest tips on average of " + aveMark)
+			} else if (aveJohn > aveMark) {
+				console.log("John's family paid the highest tips on average of " + aveJohn)
+			} else {
+				console.log("Both families paid the same tips on average.")
+			}
+			
+		</script>
+	</body>
+</html>
